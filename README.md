@@ -1,9 +1,10 @@
 # kagari
 Kagari adalah software di tullis dengan perl yang berfungsi untuk menemukan shell backdoor di suatu website
+<pre>
 
-+---------------------------+
-| RUNNER AND INSTALLER      |
-+---------------------------+
++---------------------------+ 
+| RUNNER AND INSTALLER      | 
++---------------------------+ 
 root@kagari:~# git clone https://github.com/alintamvanz/kagari.git && cp kagari/kagari.pl /usr/bin/kagari && chmod+x /usr/bin/kagari && kagari
 
 # OR
@@ -30,3 +31,4 @@ root@kagari:~# kagari
 
 
 kagari:target:>>
+</pre>
