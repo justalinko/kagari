@@ -29,4 +29,4 @@ root@kagari:~# kagari
 +----------------------------------------------+
 
 
-kagari:target >>
+kagari:target:>>
