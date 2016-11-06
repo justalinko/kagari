@@ -30,5 +30,7 @@ root@kagari:~# kagari
 +----------------------------------------------+
 
 
-kagari:target:>>
+kagari:target:>>http://google.com (set target)
+kagari:wordlists:>>wordlist_shell.txt (file wordlist shell,dipisahkan dengan "koma" (,))
+kagari:SOShell:>>home|password|shell|b374k|c99 (string khusus yang ada di shell/mencirikan shell tersebut)
 </pre>
