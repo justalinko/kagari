@@ -2,35 +2,27 @@
 Kagari adalah software di tullis dengan perl yang berfungsi untuk menemukan shell backdoor di suatu website
 <pre>
 
-+---------------------------+ 
-| RUNNER AND INSTALLER      | 
-+---------------------------+ 
-root@kagari:~# git clone https://github.com/alintamvanz/kagari.git && cp kagari/kagari.pl /usr/bin/kagari && chmod+x /usr/bin/kagari && kagari
 
-# OR
 
 root@kagari:~#  git clone https://github.com/alintamvanz/kagari.git
-root@kagari:~# cp kagari/kagari.pl /usr/bin/kagari
-root@kagari:~# chmod +x /usr/bin/kagari
-root@kagari:~# kagari
+root@kagari:~# cd kagari 
+root@kagari:~/kagari # chmod 777 *
+root@kagari:~/kagari # ./install
+
+----------------------------------------------------------------------------------------------------------------------------------
+This tool is created to help you find the file, a shell, a directory in a website.
+
+instructions for use :
+
+kagari run         : to run this tool
+kagari -h/--help   : to see this
+kagari --uninstall : to uninstall this tool on your system
 
 
-    #    #   ##    ####    ##   #####  # 
-    #   #   #  #  #    #  #  #  #    # # 
-    ####   #    # #      #    # #    # # 
-    #  #   ###### #  ### ###### #####  # 
-    #   #  #    # #    # #    # #   #  # 
-    #    # #    #  ####  #    # #    # #
-+----------------------------------------------+
-|  +----------------------------------------+  |
-|  |      ~[ SHELL BACKDOOR FINDER ]~       |  |
-|  | Script by : shutdown57 ~ linuxcode.org |  |
-|  |         copyright (c) 2016             |  |
-|  +----------------------------------------+  |
-+----------------------------------------------+
+the instructions for use "kagari run" :
 
+kagari:target   >> SiteTargetHere.com    : You must enter your target
+kagari:wordlist >> wordlist.txt          : wordlist separated by "," (comma) as the default wordlist of Kagari, you can create your own wordlist
+kagari:SOShell  >> Home|shell|Files      : It is a word or phrase that is in the shell, file, or directory you are looking for. This helps locate the file you're looking for using the Regular Expression
 
-kagari:target:>>http://google.com (set target)
-kagari:wordlists:>>wordlist_shell.txt (file wordlist shell,dipisahkan dengan "koma" (,))
-kagari:SOShell:>>home|password|shell|b374k|c99 (string khusus yang ada di shell/mencirikan shell tersebut)
-</pre>
+----------------------------------------------------------------------------------------------------------------------------------
