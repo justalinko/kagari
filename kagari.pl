@@ -1,9 +1,10 @@
 #!/usr/bin/perl
 
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
-#! c0ded by : shutdown57                            #!
+#! Codename   :  rewrite                            #!
+#! Author     : alinko (shutdown57)                 #!
+#! Version    : v1.2
 #! alinkoproject.com - linuxcode.org                #!
-#! license : http://alinkoproject.com/license.txt   #!
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 
 use HTTP::Request;
@@ -20,19 +21,20 @@ $n="\033[1;0m";
 sub a_banner{
 	system('clear');
 	print qq{$b
-    #    #   ##    ####    ##   #####  # 
-    #   #   #  #  #    #  #  #  #    # # 
-    ####   #    # #      #    # #    # # 
-    #  #   ###### #  ### ###### #####  #$n 
-    #   #  #    # #    # #    # #   #  # 
-    #    # #    #  ####  #    # #    # #$m
-+----------------------------------------------+
-|  +----------------------------------------+  |
-|  |   $h   ~[ SHELL BACKDOOR FINDER ]~   $n    |  |
-| $b | Script by : shutdown57 ~ linuxcode.org | $n |
-|  |       $k  copyright (c) 2016       $n      |  |
-|  +----------------------------------------+  |
-+----------------------------------------------+
+||~     _
+||~    | \\
+||~   _|  \\______________________________________
+||~  - ______        ________________          \\_`,
+||~-(_______            -=    -=      KAGARI       )
+||~         `--------=============----------------'   -SHELL-BACKDOOR-FINDER
+||~    $m                 -   - $n  X$m Codename :$h rewrite $b
+||~    $m                -   -  $n  X$m Version  :$h 1.2 $b
+||~    $m     `   . .  -  -     $n  X$m Author   :$h alinko $b
+||~    $m      .*` .* ;`*,`.,   $n  X$k linuxcode.org $m dracos-linux.org $b
+||~    $m       `, ,`.*.*. *    $n  X $b
+||~__________$m *  * ` ^ * $b  ____________________________
+
+
 \n
 }
 }
@@ -69,7 +71,7 @@ my $cekx=$ua->request($req);
 if($cekx->content =~ /$c/){
 print("[$klok] [".$h."FOUND".$n."] $target \n");
 }else{
-print("[$klok] [".$m."NFUND".$n."] $target \n");
+print("[$klok] [".$m."NOFUN".$n."] $target \n");
 }
 }  
 print("Do You Want Exit? y/n :".$m);
