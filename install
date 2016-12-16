@@ -1,0 +1,76 @@
+#!/bin/bash
+
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+#! Codename   :  rewrite                            #!
+#! Author     : alinko (shutdown57)                 #!
+#! Version    : v1.2                                #!
+#! alinkoproject.com - linuxcode.org                #!
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+
+m="\033[1;31m"
+k="\033[1;33m"
+h="\033[1;32m"
+b="\033[1;34m"
+n="\033[1;0m"
+kagariInstall(){
+echo -e $m"                                                            "
+echo -e $k"            ||||||||||||||   $n                               "
+echo -e $m"           =              \                                 "
+echo -e $m"           =               |                   $b K     $n      "
+echo -e $m"          _=            ___/                   $b   A   $n      "
+echo -e $m"         / _\           (o)\ >$h INSTALLING      $b  G    $n      "
+echo -e $m"        | | \            _  \                  $b    A  $n      "
+echo -e $m"         \__/          /   |                   $b   R   $n      "
+echo -e $m"          /           /  ___)  $h   HOHOHOHHOHO  $b    I  $n      "
+echo -e $m"         /    \       \    _)                  $b     ) $n      "
+echo -e $m"        \      \           /                   $b    (  $n      "
+echo -e $m"      \/ \      \_________/ $n  |\_________________,_ )   $n    "
+echo -e $m"       \/ \      /          $n  |     ==== _______)__)        "
+echo -e $m"        \/ \    /           __/___  ====_/                  "
+echo -e $m"         \/ \  /           (O____)\\_(_/                    "
+echo -e $m"                          (O_ ____)                         "
+echo -e $m"                           (O____)                          "
+
+which perl > /dev/null 2>&1
+if [[ "$?" -eq "0" ]]; then
+	echo -e $h"[+] CHECK     :$n Perl Installed."
+else
+	echo -e $m"[-] CHECK     :$n Perl Not Installed."
+	exit 1
+fi
+sleep 1
+perl -l -MHTTP::Request -e'print $HTTP::Request::VERSION' > /dev/null 2>&1
+if [[ "$?" -eq "0" ]]; then
+	echo -e $h"[+] CHECK     :$n Perl Module HTTP::Request Installed."
+else
+	echo -e $m"[-] CHECK     :$n Perl Module HTTP::Request not Installed."
+	exit 1
+fi
+sleep 1
+perl -l -MLWP::UserAgent -e 'print $LWP::UserAgent::VERSION' > /dev/null 2>&1
+if [[ "$?" -eq "0" ]]; then
+	echo -e $h"[+] CHECK     :$n Perl Module LWP::UserAgent Installed."
+else
+	echo -e $m"[-] CHECK     :$n Perl Module LWP::UserAgent not Installed."
+	exit 1
+fi
+sleep 1
+echo -e $h"[+] INSTALL  :$n Creating Directory..."
+mkdir /opt/kagari
+sleep 1
+echo -e $h"[+] INSTALL  :$n Copying kagari.pl files..."
+cp kagari.pl /opt/kagari
+sleep 1
+echo -e $h"[+] INSTALL  :$n Copying autorun.sh files..."
+cp autorun.sh /usr/bin/kagari
+sleep 1
+echo -e $h"[+] INSTALL  :$n Copying help.txt files..."
+cp help.txt /opt/kagari
+cp LICENSE.txt /opt/kagari
+echo -e $h"[+] INSTALL FINISHED [+]"
+}
+if [[ `whoami` == "root"  ]]; then
+	kagariInstall
+else
+	echo "[+] You must be root to run this command."
+fi
