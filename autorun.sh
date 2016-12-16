@@ -7,7 +7,7 @@
 #! alinkoproject.com - linuxcode.org                #!
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
 
-KAGARI_WORK_DIR="/home/kagari/kagari/"
+KAGARI_WORK_DIR="/opt/kagari"
 
 case $1 in
 	"-h" )
