@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
-#! Codename   :  rewrite                            #!
-#! Author     : alinko (shutdown57)                 #!
-#! Version    : v1.2
-#! alinkoproject.com - linuxcode.org                #!
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+# +-----===== [[ Kagari Shell Finder
+#  +----===== [[ Codename : Penikung
+#   +---===== [[ Version  : 1.8
+#    +--===== [[ Author   : shutdown57 a.k.a alinko
+#     +-===== [[ linuxcode.org - github.com/alintamvanz
+#
 
 use HTTP::Request;
 use LWP::UserAgent;
@@ -21,19 +21,26 @@ $n="\033[1;0m";
 sub a_banner{
 	system('clear');
 	print qq{$b
-||~     _
-||~    | \\
-||~   _|  \\______________________________________
-||~  - ______        ________________          \\_`,
-||~-(_______            -=    -=      KAGARI       )
-||~         `--------=============----------------'   -SHELL-BACKDOOR-FINDER
-||~    $m                 -   - $n  X$m Codename :$h rewrite $b
-||~    $m                -   -  $n  X$m Version  :$h 1.2 $b
-||~    $m     `   . .  -  -     $n  X$m Author   :$h alinko $b
-||~    $m      .*` .* ;`*,`.,   $n  X$k linuxcode.org $m dracos-linux.org $b
-||~    $m       `, ,`.*.*. *    $n  X $b
-||~__________$m *  * ` ^ * $b  ____________________________
-
+           /\\          
+          /  \\
+         ------
+         |    |              __  _   ____   ____   ____  ____   ____ 
+         | /\\ |             |  |/ ] /    | /    | /    ||    \\ |    |
+         | || |             |  |  /|  o  ||   __||  o  ||  D  ) |  | 
+        /| \\/ |\             |    \\ |     ||  |  ||     ||    /  |  | 
+     | / |    | \\ |         |     ||  _  ||  |_ ||  _  ||    \\  |  | 
+     |/  |  K |  \\|         |  .  ||  |  ||     ||  |  ||  .  \\ |  | 
+   | /   | A  |   \\ |       |__|\\_||__|__||___._||__|__||__|\\_||____|
+   |/    |  G |    \\|
+   /     | A  |     \\
+ |/      |  R |      \\|
+ |-------| I  |-------|
+         |    |	  $m +-------=======$h [[$k Kagari Shell Finder $b
+         | /\\ |    $m  +------======$h [[$m Codename :$k Penikung $b
+        /| || |\      $m  +-----=====$h [[$m Version  :$k 1.8 $b
+      |/ | || | \\|      $m +----====$h [[$m Author   :$k shutdown57 a.k.a alinko $b
+      / _| || |_ \         $m +---===$h [[$h linuxcode.org - github.com/alintamvanz $b
+      |/  =||=  \\|
 
 \n
 }
@@ -56,10 +63,10 @@ $h [ $n+$h ] $k FILE WORDLISTS : $n $w
 $h [ $n+$h ] $k REGULER EXPR   : $n $c
 };
 print $m."[ ~ ] $n $b Loading please wait...\n\n".$n;
-open(IKEH,"<$w")or die($m."CAN'T OPEN FILES -> $w".$n);
-open(KIMOCHI,"<$t")or die($m."CAN'T OPEN FILES -> $t ".$n);
-@netnot=split(",",<IKEH>);
-@crot=split(",",<KIMOCHI>);
+open(OPENA,"<$w")or die($m."CAN'T OPEN FILES -> $w".$n);
+open(OPENB,"<$t")or die($m."CAN'T OPEN FILES -> $t ".$n);
+@netnot=split(",",<OPENA>);
+@crot=split(",",<OPENB>);
 foreach $xt(@crot){
 foreach $s(@netnot){
 $target=$xt."/".$s;

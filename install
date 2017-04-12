@@ -1,76 +1,66 @@
 #!/bin/bash
 
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
-#! Codename   :  rewrite                            #!
-#! Author     : alinko (shutdown57)                 #!
-#! Version    : v1.2                                #!
-#! alinkoproject.com - linuxcode.org                #!
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+# +-----===== [[ Kagari Shell Finder
+#  +----===== [[ Codename : Penikung
+#   +---===== [[ Version  : 1.8
+#    +--===== [[ Author   : shutdown57 a.k.a alinko
+#     +-===== [[ linuxcode.org - github.com/alintamvanz
+#
 
 m="\033[1;31m"
 k="\033[1;33m"
 h="\033[1;32m"
 b="\033[1;34m"
 n="\033[1;0m"
-kagariInstall(){
-echo -e $m"                                                            "
-echo -e $k"            ||||||||||||||   $n                               "
-echo -e $m"           =              \                                 "
-echo -e $m"           =               |                   $b K     $n      "
-echo -e $m"          _=            ___/                   $b   A   $n      "
-echo -e $m"         / _\           (o)\ >$h INSTALLING      $b  G    $n      "
-echo -e $m"        | | \            _  \                  $b    A  $n      "
-echo -e $m"         \__/          /   |                   $b   R   $n      "
-echo -e $m"          /           /  ___)  $h   HOHOHOHHOHO  $b    I  $n      "
-echo -e $m"         /    \       \    _)                  $b     ) $n      "
-echo -e $m"        \      \           /                   $b    (  $n      "
-echo -e $m"      \/ \      \_________/ $n  |\_________________,_ )   $n    "
-echo -e $m"       \/ \      /          $n  |     ==== _______)__)        "
-echo -e $m"        \/ \    /           __/___  ====_/                  "
-echo -e $m"         \/ \  /           (O____)\\_(_/                    "
-echo -e $m"                          (O_ ____)                         "
-echo -e $m"                           (O____)                          "
 
-which perl > /dev/null 2>&1
-if [[ "$?" -eq "0" ]]; then
-	echo -e $h"[+] CHECK     :$n Perl Installed."
-else
-	echo -e $m"[-] CHECK     :$n Perl Not Installed."
-	exit 1
-fi
-sleep 1
-perl -l -MHTTP::Request -e'print $HTTP::Request::VERSION' > /dev/null 2>&1
-if [[ "$?" -eq "0" ]]; then
-	echo -e $h"[+] CHECK     :$n Perl Module HTTP::Request Installed."
-else
-	echo -e $m"[-] CHECK     :$n Perl Module HTTP::Request not Installed."
-	exit 1
-fi
-sleep 1
-perl -l -MLWP::UserAgent -e 'print $LWP::UserAgent::VERSION' > /dev/null 2>&1
-if [[ "$?" -eq "0" ]]; then
-	echo -e $h"[+] CHECK     :$n Perl Module LWP::UserAgent Installed."
-else
-	echo -e $m"[-] CHECK     :$n Perl Module LWP::UserAgent not Installed."
-	exit 1
-fi
-sleep 1
-echo -e $h"[+] INSTALL  :$n Creating Directory..."
-mkdir /opt/kagari
-sleep 1
-echo -e $h"[+] INSTALL  :$n Copying kagari.pl files..."
-cp kagari.pl /opt/kagari
-sleep 1
-echo -e $h"[+] INSTALL  :$n Copying autorun.sh files..."
-cp autorun.sh /usr/bin/kagari
-sleep 1
-echo -e $h"[+] INSTALL  :$n Copying help.txt files..."
-cp help.txt /opt/kagari
-cp LICENSE.txt /opt/kagari
-echo -e $h"[+] INSTALL FINISHED [+]"
+kagari_load(){
+{
+for (( i = $2 ; i <= $3 ; i++ )); do
+	sleep 0.1
+	echo "$i"
+done
+ } | whiptail --backtitle "KAGARI v1.8 codename Penikung" --title "KAGARI v1.8  - Penikung" --gauge "$1" 11 88 0
 }
-if [[ `whoami` == "root"  ]]; then
-	kagariInstall
-else
-	echo "[+] You must be root to run this command."
+kagari_about(){
+whiptail --backtitle "KAGARI v1.8 codename Penikung" --textbox about.txt --scrolltext --title "kagari - about us" 30 80 0
+}
+kagari_license(){
+ whiptail --backtitle "KAGARI v1.8 codename Penikung" --textbox LICENSE.txt --scrolltext --title "kagari - General Public License v3" 40 88 0
+}
+kagari_install(){
+	kagari_load "[!] INSTALLING KAGARI PLEASE WAIT :* ..." 0 100
+	mkdir -p /opt/kagari
+	chmod 755 -R /opt/kagari
+	cp -r * /opt/kagari
+	cp autorun.sh /usr/bin/kagari
+	chmod 755 /usr/bin/kagari
+}
+kagari_uninstall(){
+	kagari_load "[!] UNINSTALLING KAGARI ..." 0 100
+	rm -rf /opt/kagari
+	rm /usr/bin/kagari
+}
+kagari_main(){
+pil=$(whiptail --menu "[+] What Do You Want [?]" 13 50 0 \
+Install kagari \
+Uninstall kagari \
+Read License \
+About us \
+3>&1 1>&2 2>&3 3>&1 
+)
+clear
+if [[ $pil == "Install" ]]; then
+	kagari_install
+elif [[ $pil == "Uninstall" ]]; then
+	kagari_uninstall
+elif [[ $pil == "About" ]]; then
+	kagari_about
+elif [[ $pil == "Read" ]]; then
+	kagari_license
 fi
+}
+
+whiptail --backtitle "[PENIKUNG] KAGARI v1.8 Installer" --title "KAGARI v1.8 - Penikung" --msgbox "[*]  Welcome To kagari ! \n[*] Version : 1.8\n[*] Codename : Penikung\n[+]Author : shutdown57 a.k.a alinko" 11 70
+kagari_license
+kagari_about
+kagari_main

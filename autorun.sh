@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
-#! Codename   :  rewrite                            #!
-#! Author     : alinko (shutdown57)                 #!
-#! Version    : v1.2                                #!
-#! alinkoproject.com - linuxcode.org                #!
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+# +-----===== [[ Kagari Shell Finder
+#  +----===== [[ Codename : Penikung
+#   +---===== [[ Version  : 1.8
+#    +--===== [[ Author   : shutdown57 a.k.a alinko
+#     +-===== [[ linuxcode.org - github.com/alintamvanz
+#
 
 KAGARI_WORK_DIR="/opt/kagari"
 
@@ -27,10 +27,10 @@ cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
     fi
         ;;
     "run" )
-perl $KAGARI_WORK_DIR/kagari.pl
+perl $KAGARI_WORK_DIR/kagari2.pl
         ;;
     "start" )
-perl $KAGARI_WORK_DIR/kagari.pl
+perl $KAGARI_WORK_DIR/kagari2.pl
         ;;
     "--uninstall" )
 if [[ `whoami` == "root" ]]; then
