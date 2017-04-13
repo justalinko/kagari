@@ -26,12 +26,18 @@ cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
     	echo "[!] File $KAGARI_WORK_DIR/help.txt Was missing.."
     fi
         ;;
+    "run-pl" )
+perl $KAGARI_WORK_DIR/perl/kagari.pl
     "run-perl" )
-perl $KAGARI_WORK_DIR/kagari2.pl
+perl $KAGARI_WORK_DIR/perl/kagari.pl
         ;;
     "run-php" )
 php $KAGARI_WORK_DIR/php/kagari.php
         ;;
+     "run-py" )
+python $KAGARI_WORK_DIR/python/kagari.py
+     "run-python" )
+python $KAGARI_WORK_DIR/python/kagari.py
     "start" )
 perl $KAGARI_WORK_DIR/kagari2.pl
         ;;
