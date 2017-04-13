@@ -50,7 +50,7 @@ sub a_kagari{
 	print($h."kagari:".$b."wordlistTarget".$n." >>");
 	$t=<STDIN>;
 	chomp($t);
-	print($h."kagari:".$b."wordlistPassword".$n." >>");
+	print($h."kagari:".$b."wordlistShell".$n." >>");
 	$w=<STDIN>;
 	chomp($w);
 	print($h."kagari:".$b."SOShell".$n." >>");
