@@ -2,7 +2,8 @@ This tool is created to help you find the file, a shell, a directory in a websit
 
 instructions for use :
 
-kagari run         : to run this tool
+kagari run-perl    : run this kagari with perl language version
+kagari run-php     : run this kagari with php language version
 kagari -h/--help   : to see this
 kagari --uninstall : to uninstall this tool on your system
 
@@ -14,7 +15,7 @@ kagari:WordlistTarget   >> YourWordlistTarget.txt
 [*] Before you must create or write list of target separated by "," (comma) as the default wordlist of kagari.
 [*] It should be considered also for its location directory wordlist
 
-kagari:WordlistPassword >> wordlist.txt
+kagari:WordlistShell >> wordlist.txt
 
 [*] wordlist separated by "," (comma) as the default wordlist of Kagari, you can create your own wordlist
 [*] It should be considered also for its location directory wordlist
