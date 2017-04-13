@@ -1,4 +1,12 @@
 <?php
+/**
+# +-----===== [[ Kagari Shell Finder
+#  +----===== [[ Codename : Penikung
+#   +---===== [[ Version  : 1.8
+#    +--===== [[ Author   : shutdown57 a.k.a alinko
+#     +-===== [[ linuxcode.org - github.com/alintamvanz
+#
+*/
 class kagari_run{
 	public $list_url;
 	public $list_shell;
@@ -18,6 +26,7 @@ class kagari_run{
 		curl_close($curl);
 	}
 	public function kagari_banner(){
+		@system('clear');
 echo "  __  _   ____   ____   ____  ____   ____  \n";
 echo " |  |/ ] /    | /    | /    ||    \ |    | \n";
 echo " |  ' / |  o  ||   __||  o  ||  D  ) |  |  \n";
