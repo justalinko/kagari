@@ -26,8 +26,11 @@ cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
     	echo "[!] File $KAGARI_WORK_DIR/help.txt Was missing.."
     fi
         ;;
-    "run" )
+    "run-perl" )
 perl $KAGARI_WORK_DIR/kagari2.pl
+        ;;
+    "run-php" )
+php $KAGARI_WORK_DIR/php/kagari.php
         ;;
     "start" )
 perl $KAGARI_WORK_DIR/kagari2.pl
