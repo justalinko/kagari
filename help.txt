@@ -2,10 +2,11 @@ This tool is created to help you find the file, a shell, a directory in a websit
 
 instructions for use :
 
-kagari run-perl    : run this kagari with perl language version
-kagari run-php     : run this kagari with php language version
-kagari -h/--help   : to see this
-kagari --uninstall : to uninstall this tool on your system
+kagari run-perl/run-pl    : KAGARI PERL EDITION
+kagari run-php     		  : KAGARI PHP EDITION
+kagari run-python/run-py  : KAGARI PYTHON EDITION
+kagari -h/--help   		  : to see this
+kagari --uninstall 		  : to uninstall this tool on your system
 
 
 the instructions for use "kagari run" :
