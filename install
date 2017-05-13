@@ -1,71 +1,57 @@
-#!/bin/bash
-
-# +-----===== [[ Kagari Shell Finder
-#  +----===== [[ Codename : Penikung
-#   +---===== [[ Version  : 1.8
-#    +--===== [[ Author   : shutdown57 a.k.a alinko
-#     +-===== [[ linuxcode.org - github.com/alintamvanz
-#
-
-KAGARI_WORK_DIR="/opt/kagari"
-
-case $1 in
-	"-h" )
-cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
-    if [[ "$?" -eq "0" ]]; then
-    	more $KAGARI_WORK_DIR/help.txt
-    else
-    	echo "[!] File $KAGARI_WORK_DIR/help.txt Was missing.."
-    fi
-		;;
-    "--help" )
-cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
-    if [[ "$?" -eq "0" ]]; then
-    	more $KAGARI_WORK_DIR/help.txt
-    else
-    	echo "[!] File $KAGARI_WORK_DIR/help.txt Was missing.."
-    fi
-        ;;
-    "run-pl" )
-perl $KAGARI_WORK_DIR/perl/kagari.pl
-        ;;
-    "run-perl" )
-perl $KAGARI_WORK_DIR/perl/kagari.pl
-        ;;
-    "run-php" )
-php $KAGARI_WORK_DIR/php/kagari.php
-        ;;
-     "run-py" )
-python $KAGARI_WORK_DIR/python/kagari.py
-        ;;
-     "run-python" )
-python $KAGARI_WORK_DIR/python/kagari.py
-        ;;
-    "start" )
-perl $KAGARI_WORK_DIR/kagari2.pl
-        ;;
-    "--uninstall" )
-if [[ `whoami` == "root" ]]; then
-	
-which kagari > /dev/null 2>&1
-if [[ "$?" -eq "0" ]]; then
-	echo "[-] UNINSTALL   : Removing $KAGARI_WORK_DIR/kagari.pl ..."
-	rm $KAGARI_WORK_DIR/kagari.pl
-	sleep 1
-	echo "[-] UNINSTALL   : Removing /usr/bin/kagari ..."
-	rm /usr/bin/kagari
-	sleep 1
-	echo "[-] UNINSTALL   : Removing $KAGARI_WORK_DIR/*"
-	rm $KAGARI_WORK_DIR/*
-	rmdir $KAGARI_WORK_DIR
-	echo "[-] UNINSTALLED.."
-else
-	echo "[!] Kagari not installed."
-fi
-else
-	echo "[+] You must be root to run this command."
-fi
-        ;;
-        *)
-more $KAGARI_WORK_DIR/help.txt
-esac
+-m="\033[1;31m"
++KAGARI_WORK_DIR="/opt/kagari"
+-k="\033[1;33m"
+-h="\033[1;32m"
+-b="\033[1;34m"
+-n="\033[1;0m"
+ 
+ 
+-kagari_load(){
++case $1 in
+-{
++	"-h" )
+-for (( i = $2 ; i <= $3 ; i++ )); do
++cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
+-	sleep 0.1
++    if [[ "$?" -eq "0" ]]; then
+-	echo "$i"
++    	more $KAGARI_WORK_DIR/help.txt
+-done
++    else
+- } | whiptail --backtitle "KAGARI v1.8 codename Penikung" --title "KAGARI v1.8  - Penikung" --gauge "$1" 11 88 0
++    	echo "[!] File $KAGARI_WORK_DIR/help.txt Was missing.."
+-}
++    fi
+-kagari_about(){
++		;;
+-whiptail --backtitle "KAGARI v1.8 codename Penikung" --textbox about.txt --scrolltext --title "kagari - about us" 30 80 0
++    "--help" )
+-}
++cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
+-kagari_license(){
++    if [[ "$?" -eq "0" ]]; then
+- whiptail --backtitle "KAGARI v1.8 codename Penikung" --textbox LICENSE.txt --scrolltext --title "kagari - General Public License v3" 40 88 0
++    	more $KAGARI_WORK_DIR/help.txt
+-}
++    else
+-kagari_install(){
++    	echo "[!] File $KAGARI_WORK_DIR/help.txt Was missing.."
+-	kagari_load "[!] INSTALLING KAGARI PLEASE WAIT :* ..." 0 100
++    fi
+-	mkdir -p /opt/kagari
++        ;;
+-	chmod 755 -R /opt/kagari
++    "run-pl" )
+-	cp -r * /opt/kagari
++perl $KAGARI_WORK_DIR/perl/kagari.pl
+-	cp autorun.sh /usr/bin/kagari
++        ;;
+-	chmod 755 /usr/bin/kagari
++    "run-perl" )
+-}
++perl $KAGARI_WORK_DIR/perl/kagari.pl
+-kagari_uninstall(){
++        ;;
+-	kagari_load "[!] UNINSTALLING KAGARI ..." 0 100
++    "run-php" )
+-	rm -rf /opt/kagari
