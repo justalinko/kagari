@@ -28,6 +28,7 @@ cat $KAGARI_WORK_DIR/help.txt > /dev/null 2>&1
         ;;
     "run-pl" )
 perl $KAGARI_WORK_DIR/perl/kagari.pl
+        ;;
     "run-perl" )
 perl $KAGARI_WORK_DIR/perl/kagari.pl
         ;;
@@ -36,8 +37,10 @@ php $KAGARI_WORK_DIR/php/kagari.php
         ;;
      "run-py" )
 python $KAGARI_WORK_DIR/python/kagari.py
+        ;;
      "run-python" )
 python $KAGARI_WORK_DIR/python/kagari.py
+        ;;
     "start" )
 perl $KAGARI_WORK_DIR/kagari2.pl
         ;;
